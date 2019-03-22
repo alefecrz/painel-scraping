@@ -20,7 +20,7 @@ var renderPanelAlaSol = (req,res) => {
     res.render('panel', { 
         title:'Costa do Sauipe Ala Sol',
         panel: {
-            link: 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=2&HC=j$fT71@e'
+            link: 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=11&HC=j%24fT71@e'
         }
  
     });
@@ -34,7 +34,7 @@ var renderPanelAlaMar = (req,res) => {
     res.render('panel', { 
         title:'Costa do Sauipe Ala Mar',
         panel: {
-            link: 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=2&HC=j$fT71@e'
+            link: 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=5&HC=j%24fT71@e'
         }
  
     });
@@ -48,7 +48,7 @@ var renderPanelVilaNova = (req,res) => {
     res.render('panel', { 
         title:'Costa do Sauipe Vila Nova',
         panel: {
-            link: 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=2&HC=j$fT71@e'
+            link: 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=6&HC=j%24fT71@e'
         }
  
     });
@@ -61,7 +61,7 @@ var renderPanelAlaTerra = (req,res) => {
     res.render('panel', { 
         title:'Costa do Sauipe Ala Terra',
         panel: {
-            link: 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=2&HC=j$fT71@e'
+            link: 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=7&HC=j%24fT71@e'
         }
  
     });
@@ -75,7 +75,7 @@ var renderPanelSauipePremium = (req,res) => {
     res.render('panel', { 
         title:'Costa do Sauipe Premium',
         panel: {
-            link: 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=2&HC=j$fT71@e'
+            link: 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=8&HC=j%24fT71@e'
         }
  
     });
@@ -88,7 +88,7 @@ var renderPanelAlaAgua = (req,res) => {
     res.render('panel', { 
         title:'Costa do Sauipe Ala Água',
         panel: {
-            link: 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=2&HC=j$fT71@e'
+            link: 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=9&HC=j%24fT71@e'
         }
  
     });
@@ -102,7 +102,7 @@ var renderPanelCentroNautico = (req,res) => {
     res.render('panel', { 
         title:'Costa do Sauipe Centro Náutico',
         panel: {
-            link: 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=2&HC=j$fT71@e'
+            link: 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=10&HC=j%24fT71@e'
         }
  
     });
