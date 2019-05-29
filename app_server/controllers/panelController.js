@@ -1,12 +1,17 @@
+var jsdom = require('jsdom');
+const { JSDOM } = jsdom;
+
 module.exports.home = (req, res, next) => {
     renderPanelHome(req,res);
 };
 
 var renderPanelHome = (req,res) => {
+    var url = 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=2&HC=j$fT71@e';
+    scraping(url);
     res.render('index', { 
         title:'segsat Panel test',
         panel: {
-            link: 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=2&HC=j$fT71@e'
+            link: url
         }
  
     });
@@ -17,12 +22,9 @@ module.exports.alaSol = (req, res, next) => {
 };
 
 var renderPanelAlaSol = (req,res) => {
-    res.render('panel', { 
-        title:'Costa do Sauipe Ala Sol',
-        panel: {
-            link: 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=11&HC=j%24fT71@e'
-        }
- 
+    var url = 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=11&HC=j%24fT71@e';
+    jsdom.JSDOM.fromURL(url).then(scraping).then(function(panel) {
+        res.render('panel', panel);
     });
 };
 
@@ -31,12 +33,9 @@ module.exports.alaMar = (req, res, next) => {
 };
 
 var renderPanelAlaMar = (req,res) => {
-    res.render('panel', { 
-        title:'Costa do Sauipe Ala Mar',
-        panel: {
-            link: 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=5&HC=j%24fT71@e'
-        }
- 
+    var url = 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=5&HC=j%24fT71@e';
+    jsdom.JSDOM.fromURL(url).then(scraping).then(function(panel) {
+        res.render('panel', panel);
     });
 };
 
@@ -45,12 +44,9 @@ module.exports.vilaNova = (req, res, next) => {
 };
 
 var renderPanelVilaNova = (req,res) => {
-    res.render('panel', { 
-        title:'Costa do Sauipe Vila Nova',
-        panel: {
-            link: 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=6&HC=j%24fT71@e'
-        }
- 
+    var url = 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=6&HC=j%24fT71@e';
+    jsdom.JSDOM.fromURL(url).then(scraping).then(function(panel) {
+        res.render('panel', panel);
     });
 };
 module.exports.alaTerra = (req, res, next) => {
@@ -58,12 +54,9 @@ module.exports.alaTerra = (req, res, next) => {
 };
 
 var renderPanelAlaTerra = (req,res) => {
-    res.render('panel', { 
-        title:'Costa do Sauipe Ala Terra',
-        panel: {
-            link: 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=7&HC=j%24fT71@e'
-        }
- 
+    var url = 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=7&HC=j%24fT71@e';
+    jsdom.JSDOM.fromURL(url).then(scraping).then(function(panel) {
+        res.render('panel', panel);
     });
 };
 
@@ -72,12 +65,9 @@ module.exports.sauipePremium = (req, res, next) => {
 };
 
 var renderPanelSauipePremium = (req,res) => {
-    res.render('panel', { 
-        title:'Costa do Sauipe Premium',
-        panel: {
-            link: 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=8&HC=j%24fT71@e'
-        }
- 
+    var url = 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=8&HC=j%24fT71@e';
+    jsdom.JSDOM.fromURL(url).then(scraping).then(function(panel) {
+        res.render('panel', panel);
     });
 };
 module.exports.alaAgua = (req, res, next) => {
@@ -85,12 +75,9 @@ module.exports.alaAgua = (req, res, next) => {
 };
 
 var renderPanelAlaAgua = (req,res) => {
-    res.render('panel', { 
-        title:'Costa do Sauipe Ala Água',
-        panel: {
-            link: 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=9&HC=j%24fT71@e'
-        }
- 
+    var url = 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=9&HC=j%24fT71@e';
+    jsdom.JSDOM.fromURL(url).then(scraping).then(function(panel) {
+        res.render('panel', panel);
     });
 };
 
@@ -99,13 +86,34 @@ module.exports.centroNautico = (req, res, next) => {
 };
 
 var renderPanelCentroNautico = (req,res) => {
-    res.render('panel', { 
-        title:'Costa do Sauipe Centro Náutico',
-        panel: {
-            link: 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=10&HC=j%24fT71@e'
-        }
- 
+    var url = 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=10&HC=j%24fT71@e';
+    jsdom.JSDOM.fromURL(url).then(scraping).then(function(panel) {
+        res.render('panel', panel, title);
     });
 };
 
+function scraping(dom){
+    var panel = {
+        title: '',
+        travels: [
+        ]
+    };
 
+    panel.title = dom.window.document.body.querySelector('#LabelNomePonto').textContent;
+
+
+    if( dom.window.document.body.querySelector('#TabelaHorarios').children[0].children.length === 1 ){
+       return panel;
+    }else{
+        for(var i=1; i < (dom.window.document.body.querySelector('#TabelaHorarios').children[0].children.length); i++){
+            panel.travels.push({
+                road: dom.window.document.body.querySelector('#TabelaHorarios').children[0].children[i].children[0].textContent,
+                destiny : dom.window.document.body.querySelector('#TabelaHorarios').children[0].children[i].children[1].textContent,
+                distance : dom.window.document.body.querySelector('#TabelaHorarios').children[0].children[i].children[2].textContent,
+                preview : dom.window.document.body.querySelector('#TabelaHorarios').children[0].children[i].children[3].textContent
+            });
+        }
+    console.log(panel);
+    return panel;   
+    }
+}

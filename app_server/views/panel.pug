@@ -4,9 +4,48 @@ block content
     .panel
         div(id="carousel" class="carousel slide" data-ride="carousel" data-pause="false")
             div(class="carousel-inner" )
-
-                div(class="carousel-item active" data-interval="15000")
+                div(class="carousel-item active" data-interval="10000")
                     .content   
                         img(class="logoCliente height-10" src="/images/logoCliente.jpg", alt="")
+                        span(class="title")= title
                         img(class="float-right height-10" src="/images/logoSegsat.png", alt="")
-                    object(class="d-block w-100 height-90" data= panel.link, type="text/html")      
+                        span(id="LbRelogio")
+                    div(class="d-block w-100 height-90")
+                        table(class="table")
+                            thead
+                                tr
+                                    th(class="text-left") Linha
+                                    th(class="text-left") Destino
+                                    th(class="text-left") Distância
+                                    th(class="text-right") Previsão
+                            tbody
+                                each travel in travels 
+                                    tr
+                                        td(class="text-left")= travel.road                            
+                                        td(class="text-left")= travel.destiny
+                                        td(class="text-left")= travel.distance
+                                        td(class="text-right")= travel.preview       
+                div(class="carousel-item" data-interval="5000")
+                    img(class="d-block w-100" src="/images/2.png" alt="Second slide")
+                div(class="carousel-item" data-interval="10000")
+                    .content   
+                        img(class="logoCliente height-10" src="/images/logoCliente.jpg", alt="")
+                        span(class="title")= title
+                        img(class="float-right height-10" src="/images/logoSegsat.png", alt="")
+                    div(class="d-block w-100 height-90")
+                        table(class="table")
+                            thead
+                                tr
+                                    th(class="text-left") Linha
+                                    th(class="text-left") Destino
+                                    th(class="text-left") Distância
+                                    th(class="text-right") Previsão
+                            tbody
+                                each travel in travels 
+                                    tr
+                                        td(class="text-left")= travel.road                            
+                                        td(class="text-left")= travel.destiny
+                                        td(class="text-left")= travel.distance
+                                        td(class="text-right")= travel.preview         
+                div(class="carousel-item" data-interval="8000")
+                    img(class="d-block w-100" src="/images/1.png" alt="Third slide")      

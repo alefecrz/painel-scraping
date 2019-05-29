@@ -4,7 +4,6 @@ var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
 var panelRouter = require('./app_server/routes/panel');
 
 var app = express();
