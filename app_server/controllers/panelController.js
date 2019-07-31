@@ -119,8 +119,8 @@ function scraping(dom) {
     } else {
         for (var i = 1; i < (dom.window.document.body.querySelector('#TabelaHorarios').children[0].children.length); i++) {
             panel.travels.push({
-                // road: dom.window.document.body.querySelector('#TabelaHorarios').children[0].children[i].children[0].textContent,
-                road: "-",
+                road: dom.window.document.body.querySelector('#TabelaHorarios').children[0].children[i].children[0].textContent,
+                // road: "-",
                 destiny: dom.window.document.body.querySelector('#TabelaHorarios').children[0].children[i].children[1].textContent,
                 distance: dom.window.document.body.querySelector('#TabelaHorarios').children[0].children[i].children[2].textContent,
                 preview: dom.window.document.body.querySelector('#TabelaHorarios').children[0].children[i].children[3].textContent
