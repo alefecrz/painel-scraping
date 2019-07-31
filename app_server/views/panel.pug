@@ -14,16 +14,16 @@ block content
                         table(class="table")
                             thead
                                 tr
-                                    th(class="text-left") Linha
+                                    th(class="text-center") Veiculo
                                     th(class="text-left") Destino
-                                    th(class="text-left") Distância
+                                    th(class="text-center") Distância
                                     th(class="text-right") Previsão
                             tbody
                                 each travel in travels 
                                     tr
-                                        td(class="text-left")= travel.road                            
+                                        td(class="text-center")= travel.road                            
                                         td(class="text-left")= travel.destiny
-                                        td(class="text-left")= travel.distance
+                                        td(class="text-center")= travel.distance
                                         td(class="text-right")= travel.preview       
                 div(class="carousel-item" data-interval="5000")
                     img(class="d-block w-100" src="/images/2.png" alt="Second slide")
@@ -37,16 +37,16 @@ block content
                         table(class="table")
                             thead
                                 tr
-                                    th(class="text-left") Linha
+                                    th(class="text-center") Veiculo
                                     th(class="text-left") Destino
-                                    th(class="text-left") Distância
+                                    th(class="text-center") Distância
                                     th(class="text-right") Previsão
                             tbody
                                 each travel in travels 
                                     tr
-                                        td(class="text-left")= travel.road                            
+                                        td(class="text-center")= travel.road                            
                                         td(class="text-left")= travel.destiny
-                                        td(class="text-left")= travel.distance
+                                        td(class="text-center")= travel.distance
                                         td(class="text-right")= travel.preview         
                 div(class="carousel-item" data-interval="8000")
                     img(class="d-block w-100" src="/images/1.png" alt="Third slide")      

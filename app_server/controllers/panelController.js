@@ -2,26 +2,26 @@ var jsdom = require('jsdom');
 const { JSDOM } = jsdom;
 
 module.exports.home = (req, res, next) => {
-    renderPanelHome(req,res);
+    renderPanelHome(req, res);
 };
 
-var renderPanelHome = (req,res) => {
+var renderPanelHome = (req, res) => {
     var url = 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=2&HC=j$fT71@e';
     scraping(url);
-    res.render('index', { 
-        title:'segsat Panel test',
+    res.render('index', {
+        title: 'segsat Panel test',
         panel: {
             link: url
         }
- 
+
     });
 };
 
 module.exports.alaSol = (req, res, next) => {
-    renderPanelAlaSol(req,res);
+    renderPanelAlaSol(req, res);
 };
 
-var renderPanelAlaSol = (req,res) => {
+var renderPanelAlaSol = (req, res) => {
     var url = 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=11&HC=j%24fT71@e';
     jsdom.JSDOM.fromURL(url).then(scraping).then(function(panel) {
         res.render('panel', panel);
@@ -29,10 +29,10 @@ var renderPanelAlaSol = (req,res) => {
 };
 
 module.exports.alaMar = (req, res, next) => {
-    renderPanelAlaMar(req,res);
+    renderPanelAlaMar(req, res);
 };
 
-var renderPanelAlaMar = (req,res) => {
+var renderPanelAlaMar = (req, res) => {
     var url = 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=5&HC=j%24fT71@e';
     jsdom.JSDOM.fromURL(url).then(scraping).then(function(panel) {
         res.render('panel', panel);
@@ -40,20 +40,20 @@ var renderPanelAlaMar = (req,res) => {
 };
 
 module.exports.vilaNova = (req, res, next) => {
-    renderPanelVilaNova(req,res);
+    renderPanelVilaNova(req, res);
 };
 
-var renderPanelVilaNova = (req,res) => {
+var renderPanelVilaNova = (req, res) => {
     var url = 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=6&HC=j%24fT71@e';
     jsdom.JSDOM.fromURL(url).then(scraping).then(function(panel) {
         res.render('panel', panel);
     });
 };
 module.exports.alaTerra = (req, res, next) => {
-    renderPanelAlaTerra(req,res);
+    renderPanelAlaTerra(req, res);
 };
 
-var renderPanelAlaTerra = (req,res) => {
+var renderPanelAlaTerra = (req, res) => {
     var url = 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=7&HC=j%24fT71@e';
     jsdom.JSDOM.fromURL(url).then(scraping).then(function(panel) {
         res.render('panel', panel);
@@ -61,20 +61,20 @@ var renderPanelAlaTerra = (req,res) => {
 };
 
 module.exports.sauipePremium = (req, res, next) => {
-    renderPanelSauipePremium(req,res);
+    renderPanelSauipePremium(req, res);
 };
 
-var renderPanelSauipePremium = (req,res) => {
+var renderPanelSauipePremium = (req, res) => {
     var url = 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=8&HC=j%24fT71@e';
     jsdom.JSDOM.fromURL(url).then(scraping).then(function(panel) {
         res.render('panel', panel);
     });
 };
 module.exports.alaAgua = (req, res, next) => {
-    renderPanelAlaAgua(req,res);
+    renderPanelAlaAgua(req, res);
 };
 
-var renderPanelAlaAgua = (req,res) => {
+var renderPanelAlaAgua = (req, res) => {
     var url = 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=9&HC=j%24fT71@e';
     jsdom.JSDOM.fromURL(url).then(scraping).then(function(panel) {
         res.render('panel', panel);
@@ -82,43 +82,52 @@ var renderPanelAlaAgua = (req,res) => {
 };
 
 module.exports.centroNautico = (req, res, next) => {
-    renderPanelCentroNautico(req,res);
+    renderPanelCentroNautico(req, res);
 };
 
-var renderPanelCentroNautico = (req,res) => {
+var renderPanelCentroNautico = (req, res) => {
     var url = 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=10&HC=j%24fT71@e';
     jsdom.JSDOM.fromURL(url).then(scraping).then(function(panel) {
         res.render('panel', panel, title);
     });
 };
 
-function scraping(dom){
+function defaultvalues(obj) {
+    if (obj.title == 'Costa do Sauípe - Ala Sol')
+        for (var i = 0; i < obj.travels.length; i++)
+            if (obj.travels[i].distance == '1,8Km')
+                obj.travels[i].distance = '-';
+    return obj;
+}
+
+function scraping(dom) {
     var panel = {
         title: '',
         infoDate: '',
-        travels: [
-        ]
+        travels: []
     };
 
     var dataNow = new Date();
     console.log(dataNow);
-   
-    panel.infoDate = "Data:" + dataNow.getDate().toString().padStart(2, "0") + "/" + (dataNow.getMonth()+1).toString().padStart(2, "0") + "/" + dataNow.getFullYear() +" "+ (dataNow.getHours().toString().padStart(2, "0") - 3) + ":" + dataNow.getMinutes().toString().padStart(2, "0");
+
+    panel.infoDate = "Data:" + dataNow.getDate().toString().padStart(2, "0") + "/" + (dataNow.getMonth() + 1).toString().padStart(2, "0") + "/" + dataNow.getFullYear() + " " + (dataNow.getHours().toString().padStart(2, "0") - 3) + ":" + dataNow.getMinutes().toString().padStart(2, "0");
     panel.title = dom.window.document.body.querySelector('#LabelNomePonto').textContent;
 
 
-    if( dom.window.document.body.querySelector('#TabelaHorarios').children[0].children.length === 1 ){
-       return panel;
-    }else{
-        for(var i=1; i < (dom.window.document.body.querySelector('#TabelaHorarios').children[0].children.length); i++){
+    if (dom.window.document.body.querySelector('#TabelaHorarios').children[0].children.length === 1) {
+        return panel;
+    } else {
+        for (var i = 1; i < (dom.window.document.body.querySelector('#TabelaHorarios').children[0].children.length); i++) {
             panel.travels.push({
-                road: dom.window.document.body.querySelector('#TabelaHorarios').children[0].children[i].children[0].textContent,
-                destiny : dom.window.document.body.querySelector('#TabelaHorarios').children[0].children[i].children[1].textContent,
-                distance : dom.window.document.body.querySelector('#TabelaHorarios').children[0].children[i].children[2].textContent,
-                preview : dom.window.document.body.querySelector('#TabelaHorarios').children[0].children[i].children[3].textContent
+                // road: dom.window.document.body.querySelector('#TabelaHorarios').children[0].children[i].children[0].textContent,
+                road: "-",
+                destiny: dom.window.document.body.querySelector('#TabelaHorarios').children[0].children[i].children[1].textContent,
+                distance: dom.window.document.body.querySelector('#TabelaHorarios').children[0].children[i].children[2].textContent,
+                preview: dom.window.document.body.querySelector('#TabelaHorarios').children[0].children[i].children[3].textContent
             });
         }
-    console.log(panel);
-    return panel;   
+        panel = defaultvalues(panel);
+        console.log(panel);
+        return panel;
     }
 }
