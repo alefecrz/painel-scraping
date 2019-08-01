@@ -110,7 +110,7 @@ function scraping(dom) {
     var dataNow = new Date();
     console.log(dataNow);
 
-    panel.infoDate = "Data:" + dataNow.getDate().toString().padStart(2, "0") + "/" + (dataNow.getMonth() + 1).toString().padStart(2, "0") + "/" + dataNow.getFullYear() + " " + (dataNow.getHours().toString().padStart(2, "0") - 3) + ":" + dataNow.getMinutes().toString().padStart(2, "0");
+    panel.infoDate = dataNow.getDate().toString().padStart(2, "0") + "/" + (dataNow.getMonth() + 1).toString().padStart(2, "0") + "/" + dataNow.getFullYear() + " " + (dataNow.getHours().toString().padStart(2, "0") - 3) + ":" + dataNow.getMinutes().toString().padStart(2, "0");
     panel.title = dom.window.document.body.querySelector('#LabelNomePonto').textContent;
 
 
