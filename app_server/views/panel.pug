@@ -14,17 +14,19 @@ block content
                         table(class="table")
                             thead
                                 tr
-                                    th(class="text-center") Linha
-                                    th(class="text-left") Destino
-                                    th(class="text-center") Distância
-                                    th(class="text-right") Previsão
+                                    th(class="text-left sub") Plataforma
+                                    th(class="text-center sub") Serviço
+                                    th(class="text-center sub") Distância
+                                    th(class="text-right sub") Previsão
+                                    th(class="text-center sub") Veiculo
                             tbody
                                 each travel in travels 
                                     tr
-                                        td(class="text-center")= travel.road                            
-                                        td(class="text-left")= travel.destiny
-                                        td(class="text-center")= travel.distance
-                                        td(class="text-right")= travel.preview       
+                                        td(class="text-left sub")= title
+                                        td(class="text-center sub")= travel.destiny                                                                                                
+                                        td(class="text-center sub")= travel.distance                            
+                                        td(class="text-right sub")= travel.preview       
+                                        td(class="text-center sub")= travel.distance
                 div(class="carousel-item" data-interval="5000")
                     img(class="d-block w-100" src="/images/2.png" alt="Second slide")
                 div(class="carousel-item" data-interval="10000")
@@ -37,16 +39,18 @@ block content
                         table(class="table")
                             thead
                                 tr
-                                    th(class="text-center") Linha
-                                    th(class="text-left") Destino
-                                    th(class="text-center") Distância
-                                    th(class="text-right") Previsão
+                                    th(class="text-left sub") Plataforma
+                                    th(class="text-center sub") Serviço
+                                    th(class="text-center sub") Distância
+                                    th(class="text-right sub") Previsão
+                                    th(class="text-center sub") Veiculo
                             tbody
                                 each travel in travels 
                                     tr
-                                        td(class="text-center")= travel.road                            
-                                        td(class="text-left")= travel.destiny
-                                        td(class="text-center")= travel.distance
-                                        td(class="text-right")= travel.preview         
+                                        td(class="text-left sub")= title
+                                        td(class="text-center sub")= travel.destiny                                                                                                
+                                        td(class="text-center sub")= travel.distance                            
+                                        td(class="text-right sub")= travel.preview       
+                                        td(class="text-center sub")= travel.distance     
                 div(class="carousel-item" data-interval="8000")
                     img(class="d-block w-100" src="/images/1.png" alt="Third slide")      
