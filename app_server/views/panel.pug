@@ -18,15 +18,13 @@ block content
                                     th(class="text-center sub") Serviço
                                     th(class="text-center sub") Distância
                                     th(class="text-right sub") Previsão
-                                    th(class="text-center sub") Veiculo
                             tbody
                                 each travel in travels 
                                     tr
                                         td(class="text-left sub")= title
-                                        td(class="text-center sub")= travel.destiny                                                                                                
+                                        td(class="text-center sub") CIRCULAR                                                                                               
                                         td(class="text-center sub")= travel.distance                            
                                         td(class="text-right sub")= travel.preview       
-                                        td(class="text-center sub")= travel.distance
                 div(class="carousel-item" data-interval="5000")
                     img(class="d-block w-100" src="/images/2.png" alt="Second slide")
                 div(class="carousel-item" data-interval="10000")
@@ -43,14 +41,12 @@ block content
                                     th(class="text-center sub") Serviço
                                     th(class="text-center sub") Distância
                                     th(class="text-right sub") Previsão
-                                    th(class="text-center sub") Veiculo
                             tbody
                                 each travel in travels 
                                     tr
                                         td(class="text-left sub")= title
-                                        td(class="text-center sub")= travel.destiny                                                                                                
+                                        td(class="text-center sub") CIRCULAR                                                                                                
                                         td(class="text-center sub")= travel.distance                            
                                         td(class="text-right sub")= travel.preview       
-                                        td(class="text-center sub")= travel.distance     
                 div(class="carousel-item" data-interval="8000")
                     img(class="d-block w-100" src="/images/1.png" alt="Third slide")      
