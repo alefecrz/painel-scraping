@@ -98,36 +98,37 @@ function defaultvalues(obj) {
         for (var i = 0; i < obj.travels.length; i++) {
             if (obj.travels[i].distance == '1,7Km')
                 obj.travels[i].distance = '-';
-            if (obj.travels[i].preview == 'hoje às 19:09')
+            if (obj.travels[i].preview.includes('hoje'))
                 obj.travels.splice(i, 1);
-            if (obj.travels[i].preview == 'hoje às 19:15')
+            if (obj.travels[i].preview.includes('hoje'))
                 obj.travels.splice(i, 1);
         }
     if (obj.title == 'Costa do Sauípe - Ala Mar')
         for (var i = 0; i < obj.travels.length; i++) {
             if (obj.travels[i].distance == '2Km')
                 obj.travels[i].distance = '-';
-            if (obj.travels[i].preview == 'hoje às 18:56')
+            if (obj.travels[i].preview.includes('hoje'))
                 obj.travels.splice(i, 1);
-            if (obj.travels[i].preview == 'hoje às 19:01')
+            if (obj.travels[i].preview.includes('hoje'))
                 obj.travels.splice(i, 1);
         }
     if (obj.title == 'Costa do Sauípe - Ala Terra')
         for (var i = 0; i < obj.travels.length; i++) {
             if (obj.travels[i].distance == '2,9Km')
                 obj.travels[i].distance = '-';
-            if (obj.travels[i].preview == 'hoje às 19:03')
+            if (obj.travels[i].preview.includes('hoje'))
                 obj.travels.splice(i, 1);
-            if (obj.travels[i].preview == 'hoje às 19:08')
+            if (obj.travels[i].preview.includes('hoje'))
                 obj.travels.splice(i, 1);
+
         }
     if (obj.title == 'Costa do Sauípe - Premium')
         for (var i = 0; i < obj.travels.length; i++) {
             if (obj.travels[i].distance == '3,2Km')
                 obj.travels[i].distance = '-';
-            if (obj.travels[i].preview == 'hoje às 19:04')
+            if (obj.travels[i].preview.includes('hoje'))
                 obj.travels.splice(i, 1);
-            if (obj.travels[i].preview == 'hoje às 19:09')
+            if (obj.travels[i].preview.includes('hoje'))
                 obj.travels.splice(i, 1);
         }
     if (obj.title == 'Costa do Sauípe - Ala Água')
@@ -139,9 +140,9 @@ function defaultvalues(obj) {
         for (var i = 0; i < obj.travels.length; i++) {
             if (obj.travels[i].distance == '2,7Km')
                 obj.travels[i].distance = '-';
-            if (obj.travels[i].preview == 'hoje às 19:01')
+            if (obj.travels[i].preview.includes('hoje'))
                 obj.travels.splice(i, 1);
-            if (obj.travels[i].preview == 'hoje às 19:06')
+            if (obj.travels[i].preview.includes('hoje'))
                 obj.travels.splice(i, 1);
         }
 
