@@ -94,13 +94,13 @@ var renderPanelCentroNautico = (req, res) => {
 
 
 function defaultvalues(obj) {
-    if (obj.title == 'Costa do Sauípe - Ala Sol')
+    if (obj.title == 'Costa do Sauípe - Sol / Premium')
         for (var i = 0; i < obj.travels.length; i++) {
             if (obj.travels[i].distance == '1,7Km')
                 obj.travels[i].distance = '-';
             if (obj.travels[i].preview == 'hoje às 19:09')
                 obj.travels.splice(i, 1);
-            if (obj.travels[i].preview == 'hoje às 19:14')
+            if (obj.travels[i].preview == 'hoje às 19:15')
                 obj.travels.splice(i, 1);
         }
     if (obj.title == 'Costa do Sauípe - Ala Mar')
