@@ -102,9 +102,8 @@ function defaultvalues(obj) {
             
             if(obj.travels[i] != undefined){
                 if (obj.travels[i].preview.includes('hoje'))
-                    obj.travels.splice(i, 1);
-                if (obj.travels[i].preview.includes('hoje'))
-                    obj.travels.splice(i, 1);
+                    obj.travels.splice(i, 2);
+
             }
         }
     if (obj.title == 'Costa do Sauípe - Ala Mar')
@@ -116,9 +115,7 @@ function defaultvalues(obj) {
             
             if(obj.travels[i] != undefined){
                 if (obj.travels[i].preview.includes('hoje'))
-                    obj.travels.splice(i, 1);
-                if (obj.travels[i].preview.includes('hoje'))
-                    obj.travels.splice(i, 1);
+                    obj.travels.splice(i, 2);
             }
         }
     if (obj.title == 'Costa do Sauípe - Ala Terra')
@@ -128,11 +125,8 @@ function defaultvalues(obj) {
             
             if(obj.travels[i] != undefined){
                 if (obj.travels[i].preview.includes('hoje'))
-                    obj.travels.splice(i, 1);
-                if (obj.travels[i].preview.includes('hoje'))
-                    obj.travels.splice(i, 1);
+                    obj.travels.splice(i, 2);      
             }
-
         }
     if (obj.title == 'Costa do Sauípe - Premium')
         for (var i = 0; i < obj.travels.length; i++) {
@@ -141,9 +135,7 @@ function defaultvalues(obj) {
             
             if(obj.travels[i] != undefined){
                 if (obj.travels[i].preview.includes('hoje'))
-                    obj.travels.splice(i, 1);
-                if (obj.travels[i].preview.includes('hoje'))
-                    obj.travels.splice(i, 1);
+                    obj.travels.splice(i, 2);
             }
         }
     if (obj.title == 'Costa do Sauípe - Ala Água')
@@ -152,9 +144,7 @@ function defaultvalues(obj) {
                 obj.travels[i].distance = '-';
             if(obj.travels[i] != undefined){
                 if (obj.travels[i].preview.includes('hoje'))
-                    obj.travels.splice(i, 1);
-                if (obj.travels[i].preview.includes('hoje'))
-                    obj.travels.splice(i, 1);
+                    obj.travels.splice(i, 2);
             }
         }
     if (obj.title == 'Costa do Sauípe - Vila Nova Praia')
@@ -164,9 +154,7 @@ function defaultvalues(obj) {
             
             if(obj.travels[i] != undefined){
                 if (obj.travels[i].preview.includes('hoje'))
-                    obj.travels.splice(i, 1);
-                if (obj.travels[i].preview.includes('hoje'))
-                    obj.travels.splice(i, 1);
+                    obj.travels.splice(i, 2);
             }
         }
 
