@@ -94,15 +94,13 @@ var renderPanelCentroNautico = (req, res) => {
 
 
 function defaultvalues(obj) {
-    var test;
-    if(test != undefined)
-        console.log(test.includes(''));
 
     if (obj.title == 'Costa do Sauípe - Sol / Premium')
         for (var i = 0; i < obj.travels.length; i++) {
             if (obj.travels[i].distance == '1,7Km')
                 obj.travels[i].distance = '-';
-            if(obj.travels[i].preview != undefined){
+            
+            if(obj.travels[i] != undefined){
                 if (obj.travels[i].preview.includes('hoje'))
                     obj.travels.splice(i, 1);
                 if (obj.travels[i].preview.includes('hoje'))
@@ -111,10 +109,12 @@ function defaultvalues(obj) {
         }
     if (obj.title == 'Costa do Sauípe - Ala Mar')
         for (var i = 0; i < obj.travels.length; i++) {
+            console.log(obj.travels[i].preview);
             if (obj.travels[i].distance == '2Km')
                 obj.travels[i].distance = '-';
 
-            if(obj.travels[i].preview != undefined){
+            
+            if(obj.travels[i] != undefined){
                 if (obj.travels[i].preview.includes('hoje'))
                     obj.travels.splice(i, 1);
                 if (obj.travels[i].preview.includes('hoje'))
@@ -125,7 +125,8 @@ function defaultvalues(obj) {
         for (var i = 0; i < obj.travels.length; i++) {
             if (obj.travels[i].distance == '2,9Km')
                 obj.travels[i].distance = '-';
-             if(obj.travels[i].preview != undefined){
+            
+            if(obj.travels[i] != undefined){
                 if (obj.travels[i].preview.includes('hoje'))
                     obj.travels.splice(i, 1);
                 if (obj.travels[i].preview.includes('hoje'))
@@ -137,7 +138,8 @@ function defaultvalues(obj) {
         for (var i = 0; i < obj.travels.length; i++) {
             if (obj.travels[i].distance == '3,2Km')
                 obj.travels[i].distance = '-';
-             if(obj.travels[i].preview != undefined){
+            
+            if(obj.travels[i] != undefined){
                 if (obj.travels[i].preview.includes('hoje'))
                     obj.travels.splice(i, 1);
                 if (obj.travels[i].preview.includes('hoje'))
@@ -153,7 +155,8 @@ function defaultvalues(obj) {
         for (var i = 0; i < obj.travels.length; i++) {
             if (obj.travels[i].distance == '2,7Km')
                 obj.travels[i].distance = '-';
-             if(obj.travels[i].preview != undefined){
+            
+            if(obj.travels[i] != undefined){
                 if (obj.travels[i].preview.includes('hoje'))
                     obj.travels.splice(i, 1);
                 if (obj.travels[i].preview.includes('hoje'))
