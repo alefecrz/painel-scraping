@@ -147,10 +147,16 @@ function defaultvalues(obj) {
             }
         }
     if (obj.title == 'Costa do Sauípe - Ala Água')
-        for (var i = 0; i < obj.travels.length; i++)
+        for (var i = 0; i < obj.travels.length; i++){
             if (obj.travels[i].distance == '3,7Km')
                 obj.travels[i].distance = '-';
-
+            if(obj.travels[i] != undefined){
+                if (obj.travels[i].preview.includes('hoje'))
+                    obj.travels.splice(i, 1);
+                if (obj.travels[i].preview.includes('hoje'))
+                    obj.travels.splice(i, 1);
+            }
+        }
     if (obj.title == 'Costa do Sauípe - Vila Nova Praia')
         for (var i = 0; i < obj.travels.length; i++) {
             if (obj.travels[i].distance == '2,7Km')
