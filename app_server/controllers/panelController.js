@@ -141,8 +141,7 @@ function scraping(dom) {
     panel.infoDate = dataNow.getDate().toString().padStart(2, "0") + "/" + (dataNow.getMonth() + 1).toString().padStart(2, "0") + "/" + dataNow.getFullYear() + " " + (dataNow.getHours().toString().padStart(2, "0") - 3) + ":" + dataNow.getMinutes().toString().padStart(2, "0");
     panel.title = dom.window.document.body.querySelector('#LabelNomePonto').textContent;
 
-
-    if (dom.window.document.body.querySelector('#TabelaHorarios').children[0].children.length === 1) {
+    if (dom.window.document.body.querySelector('#TabelaHorarios').children[0].children.length <= 1) {
         return panel;
     } else {
         for (var i = 1; i < (dom.window.document.body.querySelector('#TabelaHorarios').children[0].children.length); i++) {
@@ -156,6 +155,10 @@ function scraping(dom) {
                 });
             }
         }
+        // panel = { title: 'Costa do Sauípe - Sol / Premium',
+        //             infoDate: '20/08/2019 7:37',
+        //             travels:[] 
+        //         }
         panel = defaultvalues(panel);
         console.log(panel);
         return panel;
