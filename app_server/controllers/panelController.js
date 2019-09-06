@@ -1,7 +1,7 @@
 var jsdom = require('jsdom');
 const { JSDOM } = jsdom;
 
-module.exports.home = (req, res, next) => {
+module.exports.home = (req, res) => {
     renderPanelHome(req, res);
 };
 
@@ -17,79 +17,158 @@ var renderPanelHome = (req, res) => {
     });
 };
 
-module.exports.alaSol = (req, res, next) => {
+module.exports.alaSol = (req, res) => {
     renderPanelAlaSol(req, res);
 };
 
 var renderPanelAlaSol = (req, res) => {
     var url = 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=11&HC=j%24fT71@e';
-    jsdom.JSDOM.fromURL(url).then(scraping).then(function(panel) {
-        res.render('panel', panel);
-    });
+    jsdom.JSDOM.fromURL(url)
+        .then(scraping)
+            .then(function(panel) {
+                    res.render('panel', panel);
+            })
+            .catch(function(){
+                var dataNow = getDate();
+                var panel = {
+                    title: 'Costa do Sauípe - Sol / Premium',
+                    infoDate: dataNow,
+                    travels: []
+                };
+                res.render('panel', panel);
+            });  
 };
 
-module.exports.alaMar = (req, res, next) => {
+module.exports.alaMar = (req, res) => {
     renderPanelAlaMar(req, res);
 };
 
 var renderPanelAlaMar = (req, res) => {
     var url = 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=5&HC=j%24fT71@e';
-    jsdom.JSDOM.fromURL(url).then(scraping).then(function(panel) {
-        res.render('panel', panel);
-    });
+    jsdom.JSDOM.fromURL(url)
+        .then(scraping)
+            .then(function(panel) {
+                    res.render('panel', panel);
+                }
+            )
+            .catch(function(){
+                    var dataNow = getDate();
+                    var panel = {
+                        title: 'Costa do Sauípe - Ala Mar',
+                        infoDate: dataNow,
+                        travels: []
+                    };
+                    res.render('panel', panel);
+                }
+            );
 };
 
-module.exports.vilaNova = (req, res, next) => {
+module.exports.vilaNova = (req, res) => {
     renderPanelVilaNova(req, res);
 };
 
 var renderPanelVilaNova = (req, res) => {
     var url = 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=6&HC=j%24fT71@e';
-    jsdom.JSDOM.fromURL(url).then(scraping).then(function(panel) {
-        res.render('panel', panel);
-    });
+    jsdom.JSDOM.fromURL(url)
+        .then(scraping)
+            .then(function(panel) {
+                res.render('panel', panel);
+            })
+            .catch(function(){
+                var dataNow = getDate();
+                var panel = {
+                    title: 'Costa do Sauípe - Vila Nova',
+                    infoDate: dataNow,
+                    travels: []
+                };
+                res.render('panel', panel);
+            });
 };
-module.exports.alaTerra = (req, res, next) => {
+module.exports.alaTerra = (req, res) => {
     renderPanelAlaTerra(req, res);
 };
 
 var renderPanelAlaTerra = (req, res) => {
     var url = 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=7&HC=j%24fT71@e';
-    jsdom.JSDOM.fromURL(url).then(scraping).then(function(panel) {
-        res.render('panel', panel);
-    });
+    jsdom.JSDOM.fromURL(url)
+        .then(scraping)
+            .then(function(panel) {
+                res.render('panel', panel);
+            })
+            .catch(function(){
+                var dataNow = getDate();
+                var panel = {
+                    title: 'Costa do Sauípe - Ala Terra',
+                    infoDate: dataNow,
+                    travels: []
+                };
+                res.render('panel', panel);
+            });
 };
 
-module.exports.sauipePremium = (req, res, next) => {
+module.exports.sauipePremium = (req, res) => {
     renderPanelSauipePremium(req, res);
 };
 
 var renderPanelSauipePremium = (req, res) => {
     var url = 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=8&HC=j%24fT71@e';
-    jsdom.JSDOM.fromURL(url).then(scraping).then(function(panel) {
-        res.render('panel', panel);
-    });
+    jsdom.JSDOM.fromURL(url)
+        .then(scraping)
+            .then(function(panel) {
+                res.render('panel', panel);
+            })
+            .catch(function(){
+                var dataNow = getDate();
+                var panel = {
+                    title: 'Costa do Sauípe - Sauípe Premium',
+                    infoDate: dataNow,
+                    travels: []
+                };
+                res.render('panel', panel);
+            });
 };
-module.exports.alaAgua = (req, res, next) => {
+module.exports.alaAgua = (req, res) => {
     renderPanelAlaAgua(req, res);
 };
 
 var renderPanelAlaAgua = (req, res) => {
     var url = 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=9&HC=j%24fT71@e';
-    jsdom.JSDOM.fromURL(url).then(scraping).then(function(panel) {
-        res.render('panel', panel);
-    });
+    jsdom.JSDOM.fromURL(url)
+        .then(scraping)
+            .then(function(panel) {
+                res.render('panel', panel);
+           })
+           .catch(function(){
+                var dataNow = getDate();
+                var panel = {
+                    title: 'Costa do Sauípe - Ala Água',
+                    infoDate: dataNow,
+                    travels: []
+                };
+                res.render('panel', panel);
+            });
 };
 
-module.exports.centroNautico = (req, res, next) => {
+module.exports.centroNautico = (req, res) => {
     renderPanelCentroNautico(req, res);
 };
 
 var renderPanelCentroNautico = (req, res) => {
-    var url = 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=10&HC=j%24fT71@e';
-    jsdom.JSDOM.fromURL(url).then(scraping).then(function(panel) {
-        res.render('panel', panel, title);
-    });
+    var url = 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=10&HC=j%24fT71@';
+    jsdom.JSDOM.fromURL(url)
+        .then(scraping)
+            .then(function(panel) { 
+                res.render('panel', panel); 
+            })
+            .catch(function(){
+                var dataNow = getDate();
+                var panel = {
+                    title: 'Costa do Sauípe - Centro Naútico',
+                    infoDate: dataNow,
+                    travels: []
+                };
+                res.render('panel', panel);
+            });
 };
 
 
@@ -128,18 +207,25 @@ function defaultvalues(obj) {
     return obj;
 }
 
-function scraping(dom) {
-    var panel = {
-        title: '',
-        infoDate: '',
-        travels: []
+function getDate(){
+    var data = new Date();
+    var dataNow = new Date(data.valueOf() - data.getTimezoneOffset() * 60000);
+    var options = {
+        year: 'numeric', month: 'numeric', day: 'numeric' , hour: 'numeric' , minute: 'numeric' , second: 'numeric',
     };
 
-    var dataNow = new Date();
-    console.log(dataNow);
+    return dataNow.toLocaleDateString('pt-br', options);
+}
 
-    panel.infoDate = dataNow.getDate().toString().padStart(2, "0") + "/" + (dataNow.getMonth() + 1).toString().padStart(2, "0") + "/" + dataNow.getFullYear() + " " + (dataNow.getHours().toString().padStart(2, "0") - 3) + ":" + dataNow.getMinutes().toString().padStart(2, "0");
-    panel.title = dom.window.document.body.querySelector('#LabelNomePonto').textContent;
+function scraping(dom) {
+ 
+    var dataNow = getDate();
+    console.log(dataNow);
+    var panel = {
+        title: dom.window.document.body.querySelector('#LabelNomePonto').textContent,
+        infoDate: dataNow,
+        travels: []
+    };
 
     if (dom.window.document.body.querySelector('#TabelaHorarios').children[0].children.length <= 1) {
         return panel;
@@ -155,10 +241,6 @@ function scraping(dom) {
                 });
             }
         }
-        // panel = { title: 'Costa do Sauípe - Sol / Premium',
-        //             infoDate: '20/08/2019 7:37',
-        //             travels:[] 
-        //         }
         panel = defaultvalues(panel);
         console.log(panel);
         return panel;
