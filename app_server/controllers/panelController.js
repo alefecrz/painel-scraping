@@ -209,7 +209,7 @@ function defaultvalues(obj) {
 
 function getDate(){
     var data = new Date();
-    var dataNow = new Date(data.valueOf());
+    var dataNow = new Date(data.valueOf()- 180*60000);
     var options = {
         year: 'numeric', month: 'numeric', day: 'numeric' , hour: 'numeric' , minute: 'numeric' ,
     };
