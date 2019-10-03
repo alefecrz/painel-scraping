@@ -8,7 +8,9 @@ html
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="Mon, 22 jul 2006 11:12:01 GMT" />
     link(rel="stylesheet", href="/bootstrap/dist/css/bootstrap.min.css")
-  body
+    script(src="/angular/angular.min.js")
+    script(src="/controllers/indexcontroller.js")
+  body(data-ng-app="panel")
     block content
 
     script(src="/jquery/dist/jquery.slim.min.js")

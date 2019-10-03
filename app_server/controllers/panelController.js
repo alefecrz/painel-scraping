@@ -6,15 +6,7 @@ module.exports.home = (req, res) => {
 };
 
 var renderPanelHome = (req, res) => {
-    var url = 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=2&HC=j$fT71@e';
-    scraping(url);
-    res.render('index', {
-        title: 'segsat Panel test',
-        panel: {
-            link: url
-        }
-
-    });
+    res.render('index');
 };
 
 module.exports.alaSol = (req, res) => {
