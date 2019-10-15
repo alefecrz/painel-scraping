@@ -17,12 +17,14 @@ block content
                                     tr
                                         th(class="text-left sub") Plataforma
                                         th(class="text-center sub") Serviço
+                                        th(class="text-center sub") Veículo
                                         th(class="text-center sub") Distância
                                         th(class="text-right sub") Previsão
                                 tbody
                                         tr(ng-repeat="travel in vm.travels")
                                             td(class="text-left sub") {{vm.title}}
                                             td(class="text-center sub") CIRCULAR                                                                                               
+                                            td(class="text-center sub") {{ travel.vehicle }}
                                             td(class="text-center sub") {{ travel.distance}}                             
                                             td(class="text-right sub")
                                                 span(ng-if="vm.notconnect === '' ") {{ travel.preview }}   
@@ -41,12 +43,14 @@ block content
                                     tr
                                         th(class="text-left sub") Plataforma
                                         th(class="text-center sub") Serviço
+                                        th(class="text-center sub") Veículo
                                         th(class="text-center sub") Distância
                                         th(class="text-right sub") Previsão
                                 tbody 
                                         tr(ng-repeat="travel in vm.travels")
                                             td(class="text-left sub") {{vm.title}}
                                             td(class="text-center sub") CIRCULAR                                                                                                
+                                            td(class="text-center sub") {{ travel.vehicle }}
                                             td(class="text-center sub") {{ travel.distance}}                            
                                             td(class="text-right sub") 
                                                 span(ng-if="vm.notconnect === '' ") {{ travel.preview }}   
