@@ -1,6 +1,6 @@
 function defaultvalues(obj) {
 
-    if (obj.title == 'Costa do Sauípe - Sol / Premium')
+    if (obj.title == 'Costa do Sauípe - Sol / Premium' || obj.title == 'Costa do Sauípe - Ala Sol v2' )
         for (var i = 0; i < obj.travels.length; i++) {
             if (obj.travels[i].distance == '1,7Km')
                 obj.travels[i].distance = '-';
@@ -60,10 +60,10 @@ function scraping(dom) {
             if (!dom.window.document.body.querySelector('#TabelaHorarios').children[0].children[i].children[3].textContent.includes('hoje')) {
                 panel.travels.push({
                     road: dom.window.document.body.querySelector('#TabelaHorarios').children[0].children[i].children[0].textContent,
-                    // road: "-",
-                    destiny: dom.window.document.body.querySelector('#TabelaHorarios').children[0].children[i].children[1].textContent,
-                    distance: dom.window.document.body.querySelector('#TabelaHorarios').children[0].children[i].children[2].textContent,
-                    preview: dom.window.document.body.querySelector('#TabelaHorarios').children[0].children[i].children[3].textContent
+                    vehicle: dom.window.document.body.querySelector('#TabelaHorarios').children[0].children[i].children[1].textContent,
+                    destiny: dom.window.document.body.querySelector('#TabelaHorarios').children[0].children[i].children[2].textContent,
+                    distance: dom.window.document.body.querySelector('#TabelaHorarios').children[0].children[i].children[3].textContent,
+                    preview: dom.window.document.body.querySelector('#TabelaHorarios').children[0].children[i].children[4].textContent
                 });
             }
         }
