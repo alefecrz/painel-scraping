@@ -15,8 +15,8 @@ module.exports.alaSol = (req, res) => {
 };
 
 module.exports.alaSolInfo = (req, res) =>{
-    // var url = 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=18&HC=j%24fT71@e';
-    var url = 'http://v35.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=18&HC=j%24fT71@e';
+    var url = 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=18&HC=j%24fT71@e';
+    // var url = 'http://v35.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=18&HC=j%24fT71@e';
     jsdom.JSDOM.fromURL(url)
             .then(utils.scraping)
                 .then(function(panel) {
@@ -29,8 +29,8 @@ module.exports.alaMar = (req, res) => {
 };
 
 module.exports.alaMarInfo = (req, res) => {
-    // var url = 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=20&HC=j%24fT71@e';
-    var url = 'http://v35.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=20&HC=j%24fT71@e';
+    var url = 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=20&HC=j%24fT71@e';
+    // var url = 'http://v35.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=20&HC=j%24fT71@e';
     jsdom.JSDOM.fromURL(url)
             .then(utils.scraping)
                 .then(function(panel) {
@@ -43,8 +43,8 @@ module.exports.vilaNova = (req, res) => {
 };
 
 module.exports.vilaNovaInfo = (req, res) => {
-    // var url = 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=23&HC=j%24fT71@e';
-    var url = 'http://v35.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=23&HC=j%24fT71@e';
+    var url = 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=23&HC=j%24fT71@e';
+    // var url = 'http://v35.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=23&HC=j%24fT71@e';
     jsdom.JSDOM.fromURL(url)
             .then(utils.scraping)
                 .then(function(panel) {
@@ -57,8 +57,8 @@ module.exports.alaTerra = (req, res) => {
 };
 
 module.exports.alaTerraInfo = (req, res) => {
-    // var url = 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=21&HC=j%24fT71@e';
-    var url = 'http://v35.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=21&HC=j%24fT71@e';
+    var url = 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=21&HC=j%24fT71@e';
+    // var url = 'http://v35.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=21&HC=j%24fT71@e';
     jsdom.JSDOM.fromURL(url)
             .then(utils.scraping)
                 .then(function(panel) {
@@ -71,8 +71,8 @@ module.exports.sauipePremium = (req, res) => {
 };
 
 module.exports.sauipePremiumInfo = (req, res) => {
-    // var url = 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=22&HC=j%24fT71@e';
-    var url = 'http://v35.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=22&HC=j%24fT71@e';
+    var url = 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=22&HC=j%24fT71@e';
+    // var url = 'http://v35.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=22&HC=j%24fT71@e';
     jsdom.JSDOM.fromURL(url)
             .then(utils.scraping)
                 .then(function(panel) {
@@ -85,8 +85,8 @@ module.exports.alaAgua = (req, res) => {
 };
 
 module.exports.alaAguaInfo = (req, res) => {
-    // var url = 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=19&HC=j%24fT71@e';
-    var url = 'http://v35.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=19&HC=j%24fT71@e';
+    var url = 'http://www.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=19&HC=j%24fT71@e';
+    // var url = 'http://v35.globalbus.com.br/Painel/SimuladorPainel.aspx?IdPainel=19&HC=j%24fT71@e';
     jsdom.JSDOM.fromURL(url)
             .then(utils.scraping)
                 .then(function(panel) {
