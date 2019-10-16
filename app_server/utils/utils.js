@@ -66,7 +66,7 @@ function getDate(){
         year: 'numeric', month: 'numeric', day: 'numeric' , hour: 'numeric' , minute: 'numeric' ,
     };
 
-    return dataNow.toLocaleDateString('pt-br', options);
+    return dataNow.toLocaleDateString('en-US', options);
 }
 
 function scraping(dom) {
