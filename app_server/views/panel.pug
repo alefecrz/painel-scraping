@@ -21,7 +21,7 @@ block content
                                         th(class="text-center sub") Distância
                                         th(class="text-right sub") Previsão
                                 tbody
-                                        tr(ng-repeat="travel in vm.travels")
+                                        tr(ng-repeat="travel in vm.travels | orderBy: '-distance' ")
                                             td(class="text-left sub") {{vm.title}}
                                             td(class="text-center sub") CIRCULAR                                                                                               
                                             td(class="text-center sub") {{ travel.vehicle }}
@@ -47,7 +47,7 @@ block content
                                         th(class="text-center sub") Distância
                                         th(class="text-right sub") Previsão
                                 tbody 
-                                        tr(ng-repeat="travel in vm.travels")
+                                        tr(ng-repeat="travel in vm.travels | orderBy: '-distance' ")
                                             td(class="text-left sub") {{vm.title}}
                                             td(class="text-center sub") CIRCULAR                                                                                                
                                             td(class="text-center sub") {{ travel.vehicle }}
