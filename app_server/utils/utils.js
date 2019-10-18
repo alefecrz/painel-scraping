@@ -1,7 +1,7 @@
 function defaultvalues(obj) {
     if (obj.title == 'Costa do Sauípe - Ala Sol / Premium' )
         for (var i = 0; i < obj.travels.length; i++) {
-            if (obj.travels[i].distance == '1,7Km')
+            if (obj.travels[i].vehicle === ' - ' )
                 obj.travels[i].distance = '-';
             if(obj.travels[i].vehicle === ' - ' && obj.travels[i].preview==="chegando"){
                 obj.travels.splice(i,1);
@@ -11,7 +11,7 @@ function defaultvalues(obj) {
         }
     if (obj.title == 'Costa do Sauípe - Ala Mar')
         for (var i = 0; i < obj.travels.length; i++) {
-            if (obj.travels[i].distance == '2Km')
+            if (obj.travels[i].vehicle === ' - ' )
                 obj.travels[i].distance = '-';
             if(obj.travels[i].vehicle === ' - ' && obj.travels[i].preview==="chegando"){
                 obj.travels.splice(i,1);
@@ -20,7 +20,7 @@ function defaultvalues(obj) {
         }
     if (obj.title == 'Costa do Sauípe - Ala Terra')
         for (var i = 0; i < obj.travels.length; i++) {
-            if (obj.travels[i].distance == '2,9Km')
+            if (obj.travels[i].vehicle === ' - ' )
                 obj.travels[i].distance = '-';
             if(obj.travels[i].vehicle === ' - ' && obj.travels[i].preview==="chegando"){
                 obj.travels.splice(i,1);
@@ -29,7 +29,7 @@ function defaultvalues(obj) {
         }   
     if (obj.title == 'Costa do Sauípe - Premium')
         for (var i = 0; i < obj.travels.length; i++) {
-            if (obj.travels[i].distance == '3,2Km')
+            if (obj.travels[i].vehicle === ' - ' )
                 obj.travels[i].distance = '-';
             if(obj.travels[i].vehicle === ' - ' && obj.travels[i].preview==="chegando"){
                 obj.travels.splice(i,1);
@@ -38,7 +38,7 @@ function defaultvalues(obj) {
         }
     if (obj.title == 'Costa do Sauípe - Ala Água')
         for (var i = 0; i < obj.travels.length; i++) {
-            if (obj.travels[i].distance == '3,7Km')
+            if (obj.travels[i].vehicle === ' - ' )
                 obj.travels[i].distance = '-';
             if(obj.travels[i].vehicle === ' - ' && obj.travels[i].preview==="chegando"){
                 obj.travels.splice(i,1);
@@ -47,7 +47,7 @@ function defaultvalues(obj) {
         }
     if (obj.title == 'Costa do Sauípe - Vila Nova Praia')
         for (var i = 0; i < obj.travels.length; i++) {
-            if (obj.travels[i].distance == '2,7Km')
+            if (obj.travels[i].vehicle === ' - ' )
                 obj.travels[i].distance = '-';
             if(obj.travels[i].vehicle === ' - ' && obj.travels[i].preview==="chegando"){
                 obj.travels.splice(i,1);
